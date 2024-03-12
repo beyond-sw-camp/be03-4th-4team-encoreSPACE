@@ -33,5 +33,5 @@ jobs:
 
       - name: deploy to s3
         run: |
-          aws s3 sync ./Space_Frontend/dist/spa s3://spacetemp88.shop
+          aws s3 sync ./Space_Frontend/dist/spa s3://spaceencore.shop
 
