@@ -27,19 +27,19 @@ public class PostController {
         this.postService = postService;
     }
 
-    @Operation(
-            summary = "게시글 작성",
-            description = "게시글 작성"
-    )
-    @PostMapping("/create")
-    public ResponseEntity<CommonResponse> createPost(@ModelAttribute PostCreateDto postCreateDto,
-                                                     @AuthenticationPrincipal CustomUserDetails userDetails){
-
-        postService.save(postCreateDto, userDetails.getUsername());
-        return CommonResponse.responseMessage(
-                HttpStatus.CREATED,
-                "게시글이 성공적으로 작성되었습니다.");
-    }
+//    @Operation(
+//            summary = "게시글 작성",
+//            description = "게시글 작성"
+//    )
+//    @PostMapping("/create")
+//    public ResponseEntity<CommonResponse> createPost(@ModelAttribute PostCreateDto postCreateDto,
+//                                                     @AuthenticationPrincipal CustomUserDetails userDetails){
+//
+//        postService.save(postCreateDto, userDetails.getUsername());
+//        return CommonResponse.responseMessage(
+//                HttpStatus.CREATED,
+//                "게시글이 성공적으로 작성되었습니다.");
+//    }
 
     @Operation(
             summary = "게시글 목록 조회",
