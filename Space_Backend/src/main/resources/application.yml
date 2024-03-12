@@ -39,12 +39,12 @@ spring:
           google:
             client-id: 654460662714-bvsq9qhg8uotk63d7uetfvslplcjc2a4.apps.googleusercontent.com
             client-secret: 1
-            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            redirect-uri: 'https://server.spaceencore.shop/login/oauth2/code/{registrationId}'
             scope: profile,email
           github:
             client-id: 8d99c814699556d660dd
             client-secret: 1
-            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            redirect-uri: 'https://server.spaceencore.shop/login/oauth2/code/{registrationId}'
             scope: read:user,user:email
 
 springdoc:
