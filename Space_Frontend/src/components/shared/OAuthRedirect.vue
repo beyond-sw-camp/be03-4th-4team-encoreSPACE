@@ -25,9 +25,13 @@ export default {
     // 쿠키에서 accessToken 가져오기
     const accessToken = this.getAccessTokenFromCookie();
     console.log(accessToken);
-    if(accessToken != null){
-      localStorage.setItem("accessToken",accessToken)
+
+    // 쿠키에서 accessToken이 존재하는 경우 또는 null이 아닌 경우 실행
+    if (accessToken) {
+      localStorage.setItem("accessToken", accessToken);
       document.cookie = 'accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+    } else {
+      console.log("No accessToken found in the cookie.");
     }
     // location.href=FountURL;
 
