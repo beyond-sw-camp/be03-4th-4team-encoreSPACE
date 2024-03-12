@@ -24,12 +24,13 @@ export default {
   created() {
     // 쿠키에서 accessToken 가져오기
     const accessToken = this.getAccessTokenFromCookie();
+    console.log(accessToken);
     if(accessToken != null){
       localStorage.setItem("accessToken",accessToken)
       document.cookie = 'accessToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
     }
     // location.href=FountURL;
-    console.log(this.getAccessTokenFromCookie());
+
   }
 }
 </script>
