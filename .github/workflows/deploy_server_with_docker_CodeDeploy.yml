@@ -3,7 +3,7 @@ name: CodeDeploy
 on:
   push:
     branches:
-      - dev
+      - main
 
 env:
   IMAGE_NAME: space_backend
