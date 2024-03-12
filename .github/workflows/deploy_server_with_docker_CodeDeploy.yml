@@ -3,7 +3,7 @@ name: CodeDeploy
 on:
   push:
     branches:
-      - main
+      - dev  # 이거는 희준님 SNS 시크릿키 없어서 실행 안됩니다.(세종)
 
 env:
   IMAGE_NAME: space_backend
