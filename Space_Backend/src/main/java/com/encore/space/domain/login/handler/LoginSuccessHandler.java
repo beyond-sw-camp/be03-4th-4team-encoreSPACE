@@ -58,6 +58,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
                 Objects.requireNonNull(oauth2User.getAttribute("role")).toString(),
                 webConfig.ipCheck(request)));
         cookie.setPath("/"); // 모든 경로에 대해 쿠키 전송
+        cookie.setSecure(false);
         response.addCookie(cookie);
 
         String redirectUrl = "https://www.spaceencore.shop/oauth2/redirect";
