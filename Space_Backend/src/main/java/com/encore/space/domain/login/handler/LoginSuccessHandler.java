@@ -51,23 +51,24 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.setCharacterEncoding("UTF-8");
         OAuth2User oauth2User = (OAuth2User) authentication.getPrincipal();
-
-
-        Cookie cookie = new Cookie("accessToken", jwtProvider.exportToken(
+        String cookiStr = jwtProvider.exportToken(
                 oauth2User.getAttribute("email"),
                 Objects.requireNonNull(oauth2User.getAttribute("role")).toString(),
-                webConfig.ipCheck(request)));
+                webConfig.ipCheck(request))
+
+        Cookie cookie = new Cookie("accessToken", cookiStr);
 
         cookie.setPath("/"); // 모든 경로에 대해 쿠키 전송
         cookie.setSecure(false);
-        cookie.setSameSite("None");
-        cookie.setDomain(".www.spaceencore.shop");
-        response.addCookie(cookie);
+//        cookie.setSameSite("None");
+//        cookie.setDomain(".www.spaceencore.shop");
+//        response.addCookie(cookie);
 
         String redirectUrl = "https://www.spaceencore.shop/oauth2/redirect";
 
         // 클라이언트로 리다이렉트
         response.setStatus(HttpStatus.FOUND.value());
         response.setHeader(HttpHeaders.LOCATION, redirectUrl);
+        response.setHeader(HttpHeaders.SET_COOKIE, String.format("accessToken=%s; Path=/; Secure; SameSite=None", cookiStr)));
     }
 }
