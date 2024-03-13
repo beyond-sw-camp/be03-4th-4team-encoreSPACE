@@ -69,6 +69,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         // 클라이언트로 리다이렉트
         response.setStatus(HttpStatus.FOUND.value());
         response.setHeader(HttpHeaders.LOCATION, redirectUrl);
-        response.setHeader(HttpHeaders.SET_COOKIE, String.format("accessToken=%s; Path=/; Secure; SameSite=None", cookiStr)));
+        response.setHeader(HttpHeaders.SET_COOKIE, String.format("accessToken=%s; Path=/; Secure; SameSite=None", cookiStr));
     }
 }
