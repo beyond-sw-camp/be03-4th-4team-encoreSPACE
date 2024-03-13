@@ -60,9 +60,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
         cookie.setPath("/"); // 모든 경로에 대해 쿠키 전송
         cookie.setSecure(false);
-//        cookie.setSameSite("None");
-//        cookie.setDomain(".www.spaceencore.shop");
-//        response.addCookie(cookie);
+        cookie.setDomain(".spaceencore.shop");
 
         String redirectUrl = "https://www.spaceencore.shop/oauth2/redirect";
 
@@ -70,5 +68,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         response.setStatus(HttpStatus.FOUND.value());
         response.setHeader(HttpHeaders.LOCATION, redirectUrl);
         response.setHeader(HttpHeaders.SET_COOKIE, String.format("accessToken=%s; Path=/; Secure; SameSite=None", cookiStr));
+        response.addCookie(cookie);
     }
 }
