@@ -54,7 +54,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         String cookiStr = jwtProvider.exportToken(
                 oauth2User.getAttribute("email"),
                 Objects.requireNonNull(oauth2User.getAttribute("role")).toString(),
-                webConfig.ipCheck(request))
+                webConfig.ipCheck(request));
 
         Cookie cookie = new Cookie("accessToken", cookiStr);
 
