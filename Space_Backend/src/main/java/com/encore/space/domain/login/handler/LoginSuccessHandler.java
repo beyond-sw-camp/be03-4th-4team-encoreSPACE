@@ -60,12 +60,13 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
         cookie.setPath("/"); // 모든 경로에 대해 쿠키 전송
         cookie.setSecure(false);
-        cookie.setDomain("www.spaceencore.shop");
+        cookie.setDomain(".spaceencore.shop");
         response.addCookie(cookie);
         String redirectUrl = "https://www.spaceencore.shop/oauth2/redirect";
 
         // 클라이언트로 리다이렉트
         response.setStatus(HttpStatus.FOUND.value());
         response.setHeader(HttpHeaders.LOCATION, redirectUrl);
+        response.setHeader(HttpHeaders.SET_COOKIE, String.format("accessToken=%s; Path=/; Secure; SameSite=None", cookiStr));
     }
 }
