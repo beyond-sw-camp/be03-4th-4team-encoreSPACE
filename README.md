@@ -270,4 +270,4 @@ jobs:
 
 # 3. 시연 링크
 
-[encorespace.shop](https://www.encorespace.shop)
+[encorespace.shop](https://encorespace.shop)
