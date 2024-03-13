@@ -79,10 +79,6 @@ jobs:
           aws s3 sync ./Space_Frontend/dist/spa s3://spaceencore.shop
 ```
 
-<p>
-    <img src="frontend 구조"/>
-</p>
-
 ### Backend 방식
 
 <p align="center">
