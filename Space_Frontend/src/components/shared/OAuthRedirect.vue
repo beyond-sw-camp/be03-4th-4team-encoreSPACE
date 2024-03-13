@@ -24,6 +24,7 @@ export default {
   created() {
     // 쿠키에서 accessToken 가져오기
     const accessToken = this.getAccessTokenFromCookie();
+    console.log(document.cookie)
     console.log(accessToken);
 
     // 쿠키에서 accessToken이 존재하는 경우 또는 null이 아닌 경우 실행
