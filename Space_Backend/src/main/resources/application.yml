@@ -61,3 +61,16 @@ jwt:
   refreshTokenSecretKey: encorespace리프레시토큰시크릿키입니다김선국강사님은신이야부정하면안돼믿어알았지?
   accessTokenTime : 30
   refreshTokenTime : 7
+
+
+# s3 업로드 용
+cloud:
+  aws:
+    credentials:
+      access-key: 1
+      secret-key: 1
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
